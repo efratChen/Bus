@@ -1,0 +1,11 @@
+<h1 class="logo">Founds in Bus</h1>
+<b><img class="logo" src="../../assets/giphy(1).gif" width="250" height="200" /> </b>
+<br />
+<nav class="inline-flex">
+  <p class="inline"><a routerLink="/allItems/0">all items</a></p>
+  <div *ngFor="let c of Categories">
+    <p class="inline"><a routerLink="/allItems/{{c.id}}" routerLinkActive="active">{{c.name }}</a></p>
+  </div>
+  <p class="inline"><a routerLink="addItem">add item</a></p>
+</nav>
+<router-outlet></router-outlet>

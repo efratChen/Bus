@@ -1,0 +1,39 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h2 class="active"> New found </h2>
+        <div class="fadeIn first">
+        </div>
+        <div>
+            <form [formGroup]="addItemForm" (ngSubmit)="submit()" class="px-4 py-3">
+                <input type="text" id="description" class="fadeIn third" name="login" placeholder="description"
+                    formControlName="description" [(ngModel)]="description">
+                <input type="text" id="found in line" class="fadeIn third" name="login" placeholder="found in line"
+                    formControlName="foundInLine" placeholder="found in line" [(ngModel)]="foundInLine">
+                <input type="text" id="phone" class="fadeIn third" name="login" placeholder="phone"
+                    formControlName="phone" placeholder="phone" [(ngModel)]="phone">
+                <!-- option 1: -->
+                <select formControlName="category" [(ngModel)]="category" class="form-control">
+                    <option *ngFor="let c of getAll" [style.backgroundColor]="c.color"> {{c.name}} </option>
+                </select>
+                <!-- option 2: -->
+                <!-- <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown 
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id="e2" href="#" *ngFor="let c of getAll"
+                            [style.backgroundColor]="c.color">{{c.name}}</a>
+                    </div>
+                </div> -->
+                <input type="submit" class="fadeIn fourth" value="ok">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- [value] - initial with empty field , and with [] it can access to the element-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
